@@ -1,58 +1,7 @@
 <template>
   <NuxtLayout>
     <div class="content-wrapper">
-      <form @submit.prevent="addTask">
-        <input v-model="newTask" name="newTask" autocomplete="off" />
-        <button>追加</button>
-      </form>
-      <div class="table-container">
-        <table class="tasktable" v-if="tasks.length > 0">
-          <thead>
-            <tr>
-              <th style="width: 70%;">タスク</th>
-              <th style="width: 30%;">アクション</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="(task, index) in tasks" :key="task">
-              <td>
-                <span v-if="!isEditing || editIndex !== index">{{ task }}</span>
-              </td>
-              
-              <td>
-                <button class="deleteButton" @click="deleteTask(index)">削除</button>
-                <button class="editButton" @click="openEditModal(index)">編集</button>
-              </td>
-            </tr>
-          </tbody>
-          
-        </table>
-
-        <div v-else class="no-tasks-message">
-          <p>TODOデータはありません</p>
-        </div>
-      </div>
-      <form v-if="editIndex === index" @submit.prevent="saveEditedTask(index)" class="edit-modal">
-          <input v-model="editedTask" type="text" />
-          <button type="submit">保存</button>
-        </form>
-      <button
-        class="clear-button"
-        @click="clearTask"
-        v-if="tasks.length > 0">
-        クリア
-      </button>
-      <!-- ボタン -->
-    <button @click="openModal">モーダルを開く</button>
-
-    <!-- モーダル -->
-    <div v-if="isModalOpen" class="modal">
-      <div class="modal-content">
-        <h2>モーダルのタイトル</h2>
-        <p>モーダルの内容をここに記述します。モーダルの内容をここに記述します。モーダルの内容をここに記述します。</p>
-        <button @click="closeModal">閉じる</button>
-      </div>
-    </div>
+      <p>user</p>
       
     </div>
   </NuxtLayout>
